@@ -1,0 +1,39 @@
+@charset "UTF8";
+
+body {
+    background-color: rgb(229, 245, 212);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.sandbox{
+    background-color: #fffae2; /*Cor de fundo da pagina "atividade-3"*/
+    background-image: url(../imagens/logo-f-transparente.png); /*Imagem de fundo*/
+    background: size 100%;;/*A imagem vai ocoupar 100% da largura da pagina*/
+    background-repeat: no-repeat;/*Nao repete a imagem*/
+    background-position: contain;/*Centraliza a imagem*/
+   
+}
+header{
+    display: grid;
+    align-items: center;
+    padding: 0;
+    background-color: #E5F5D4;
+    color: white;
+}
+
+h1 {
+    color:rgb(79, 124, 79);
+    background-color:  rgb(229, 245, 212);
+}
+
+h4 {
+    color: rgb(19, 138, 102) ;
+}
+
+h5 {
+    color: rgb(11, 170, 122);
+}
+
+p {
+    text-align: justify;
+}

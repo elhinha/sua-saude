@@ -1,4 +1,62 @@
 @charset "UTF8";
+/*zerando*/
+*{
+    padding: 6px;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*criando uma navbar*/
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 30px;
+    align-items: center;
+    color:#202020;
+}
+/*.logo {
+    font-weight: 800;
+    font-size: 20px;
+}*/
+.nav-itens{
+    list-style: none;
+    display: flex;
+}
+.nav_itens>li>a {
+    padding: 20px;
+    color:#202020;
+    text-decoration: none;
+}
+.login {
+    padding: 10px 40px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    color: #202020;
+    background-color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    /*transition: 1s background;*/
+}
+/*.login:hover {
+    background-color: #a1a1a1;
+    transition: 1s;
+}*/
+.cadastro {
+    padding: 10px 40px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #202020;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    transition: 1s background;
+}
+.cadastro:hover {
+    background-color: #3d3d3d;
+    transition: 1s background;
+}
 
 body {
     background-color: rgb(229, 245, 212);
@@ -37,3 +95,4 @@ h5 {
 p {
     text-align: justify;
 }
+

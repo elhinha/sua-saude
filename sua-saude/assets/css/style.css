@@ -1,98 +1,292 @@
-@charset "UTF8";
-/*zerando*/
-*{
-    padding: 6px;
+@charset "UTF8"; /* Define a codificação UTF-8 */
+
+/* Estilo geral para caixas: remove margem, padding e define box-sizing */
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-/*criando uma navbar*/
-nav {
+
+/* Estilo do corpo da página: define a fonte e a cor de fundo */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: whitesmoke;
+}
+
+/* Paleta de cores acessíveis para pessoas com tipos de daltonismo */
+:root {
+    --azul-escuro: #1A2FEB;
+    --azul-medio: #5B82E0;
+    --azul-claro: #B5E3F5;
+    --amarelo-neon: #DAE605;
+    --laranja-claro: #F5C782;
+}
+
+/* Estilo do container principal do cabeçalho: alinhamento e cores */
+.container {
     display: flex;
-    justify-content: space-evenly;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 30px;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: var(--azul-escuro); /* Fundo azul escuro */
+    color: white; /* Texto branco */
+}
+
+/* Estilo da logo na navbar: tamanho e peso da fonte */
+.navbar-logo .logo {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+/* Estilo da barra de navegação: alinha itens e espaça links */
+.nav-container {
+    display: flex;
     align-items: center;
-    color:#202020;
+    gap: 20px;
 }
-/*.logo {
-    font-weight: 800;
-    font-size: 20px;
-}*/
-.nav-itens{
-    list-style: none;
+
+/* Estilo da lista de navegação: remove marcadores e alinha links */
+.nav-menu {
+    list-style-type: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
-.nav_itens>li>a {
-    padding: 20px;
-    color:#202020;
+
+/* Espaçamento entre os itens do menu */
+.nav-menu li {
+    margin-right: 15px;
+}
+
+/* Estilo dos links no menu: cor e remoção de sublinhado */
+.nav-menu a {
+    color: white;
     text-decoration: none;
 }
-.login {
-    padding: 10px 40px;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    color: #202020;
-    background-color: #fff;
-    font-family: 'Times New Roman', Times, serif;
-    cursor: pointer;
-    /*transition: 1s background;*/
-}
-/*.login:hover {
-    background-color: #a1a1a1;
-    transition: 1s;
-}*/
-.cadastro {
-    padding: 10px 40px;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #202020;
-    font-family: 'Times New Roman', Times, serif;
-    cursor: pointer;
-    transition: 1s background;
-}
-.cadastro:hover {
-    background-color: #3d3d3d;
-    transition: 1s background;
+
+/* Estilo dos links ao passar o mouse: cor e sublinhado */
+.nav-menu a:hover {
+    color: var(--laranja-claro);
+    text-decoration: dashed;
 }
 
-body {
-    background-color: rgb(229, 245, 212);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+/* Estilo dos botões de login e cadastro: alinhamento e espaçamento */
+.btn {
+    display: flex;
+    gap: 10px;
 }
-.sandbox{
-    background-color: #fffae2; /*Cor de fundo da pagina "atividade-3"*/
-    background-image: url(../imagens/logo-f-transparente.png); /*Imagem de fundo*/
-    background: size 100%;;/*A imagem vai ocoupar 100% da largura da pagina*/
-    background-repeat: no-repeat;/*Nao repete a imagem*/
-    background-position: contain;/*Centraliza a imagem*/
-   
-}
-header{
-    display: grid;
-    align-items: center;
-    padding: 0;
-    background-color: #E5F5D4;
+
+/* Estilo básico dos botões: cor, bordas e padding */
+.btn button {
+    background-color: var(--azul-medio);
     color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
-h1 {
-    color:rgb(79, 124, 79);
-    background-color:  rgb(229, 245, 212);
+/* Efeito ao passar o mouse sobre os botões */
+.btn button:hover {
+    background-color: var(--laranja-claro);
 }
 
-h4 {
-    color: rgb(19, 138, 102) ;
+/* Estilo do corpo principal: padding nas laterais */
+main {
+    padding: 20px 30px;
 }
 
-h5 {
-    color: rgb(11, 170, 122);
+/* Estilo das seções: espaçamento inferior */
+section {
+    margin-bottom: 30px;
 }
 
-p {
-    text-align: justify;
+/* Estilo dos títulos (h2): cor dos títulos */
+h2 {
+    color: #333;
 }
 
+/* Estilo do título dentro do aside */
+aside h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Estilo dos links no aside: cor e remoção de sublinhado */
+aside a {
+    color: var(--azul-medio);
+    text-decoration: none;
+}
+
+/* Estilo ao passar o mouse nos links do aside */
+aside a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo padrão para todas as seções: alinhamento e espaçamento */
+section {
+    text-align: center;
+    margin: 27px auto;
+    padding: 20px;
+    max-width: 98%;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Estilo das seções UBSF, clínicas e hospitais: fundo gradiente e sombra */
+.ubsf-section, .clinicas-section, .hospitais-section {
+    background: linear-gradient(135deg, var(--azul-medio), var(--azul-claro));
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilo dos itens dentro das seções UBSF, clínicas e hospitais */
+.ubsf-item, .clinica-item, .hospital-item { 
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões de rolagem dos carrosséis: estilo básico e cor */
+.scroll-left-ubsf, .scroll-right-ubsf,
+.scroll-left-clinicas, .scroll-right-clinicas,
+.scroll-left-hospitais, .scroll-right-hospitais {
+    background-color: var(--azul-escuro);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* Efeito ao passar o mouse sobre os botões de rolagem */
+.scroll-left-ubsf:hover, .scroll-right-ubsf:hover,
+.scroll-left-clinicas:hover, .scroll-right-clinicas:hover,
+.scroll-left-hospitais:hover, .scroll-right-hospitais:hover {
+    background-color: var(--laranja-claro);
+}
+
+/* Estilo básico do carrossel: itens em linha */
+.carousel {
+    display: flex;
+    align-items: center;
+}
+
+/* Contêiner dos carrosséis: alinhamento e overflow oculto */
+.ubsf-container, .clinicas-container, .hospitais-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Estilo do rodapé: cores e padding */
+.footer {
+    background-color: var(--azul-escuro);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Container do rodapé: alinhamento dos elementos */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo do texto informativo no rodapé */
+.footer-info p {
+    font-size: 14px;
+}
+
+/* Estilo dos links de navegação no rodapé: lista em linha */
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* Espaçamento entre os links do rodapé */
+.footer-links li {
+    margin-right: 15px;
+}
+
+/* Estilo dos links do rodapé: remoção de sublinhado e cor */
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* Efeito ao passar o mouse nos links do rodapé */
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo das redes sociais no rodapé: espaçamento entre ícones */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo dos ícones de redes sociais no rodapé */
+.footer-social .social-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Efeito ao passar o mouse nos ícones de redes sociais */
+.footer-social .social-icon:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Carrossel em coluna para telas pequenas */
+    .carousel {
+        flex-direction: column;
+    }
+    
+    /* Ajustes no cabeçalho para telas pequenas */
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Menu de navegação em coluna para telas pequenas */
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    /* Margem superior nos botões para telas pequenas */
+    .btn {
+        margin-top: 10px;
+    }
+
+    /* Ajustes no layout do rodapé para telas pequenas */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Links do rodapé em coluna para telas pequenas */
+    .footer-links ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    /* Ícones de redes sociais no rodapé em coluna para telas pequenas */
+    .footer-social {
+        margin-top: 10px;
+    }
+}

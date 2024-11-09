@@ -1,48 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt-br"><!--definindo o idioma-->
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"><!--suporte a caracteres especiais e acentuação-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- layout adaptável-->
-    <link rel="shortcut icon" href="../projeto-individual/sua-saude/assets/icones/logo-suasaude.ico" type="image/x-icon"><!--adcionando favicon -->
-    <title>Sua Saúde</title><!--título ao carregar a página-->
+    <!-- Definição do conjunto de caracteres -->
+    <meta charset="UTF-8">
+    <!-- Definição da escala e largura da viewport para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Sua Saúde</title>
+    <!-- Link para o arquivo de estilos CSS -->
     <link rel="stylesheet" href="../projeto-individual/sua-saude/assets/css/style.css">
-    
 </head>
+<body>
+    <!-- Cabeçalho contendo a logo e o menu de navegação -->
+    <header>
+        <div class="container">
+            <!-- Navbar que contém a logo -->
+            <nav class="navbar-logo">
+                <div class="logo">Sua Saúde</div>  
+            </nav>
 
+            <!-- Menu principal de navegação -->
+            <div class="menu">
+                <nav class="nav-container">
+                    <!-- Lista de links do menu de navegação -->
+                    <ul class="nav-menu">
+                        <li><a href="../projeto-individual/sandbox.html" target="_blank">SandBox</a></li>
+                        <li><a href="../projeto-individual/paleta-cor.html" target="_blank">paleta</a></li>
+                    </ul>
 
-<!--<header> Cabeçalho da pagina com imagem
-    <img src="../projeto-individual/sua-saude/assets/imagens/logo-f-transparente.png" width="40%" height="auto">
-    <hr>
-</header>-->
-
-<body><!--conteúdo visível para o usuário-->
-
-    <nav><!--criação da nav bar com lista-->
-
-        <!--<div class="logo">Sua Saúde</div>-->
-
-        <div class="links">
-
-            <ul class="nav-itens">
-                <li><a href="#"></a> Home</li>
-                <li><a href="#"></a> About us</li>
-                <li><a href="#"></a> Preços</li>
-                <li><a href="#"></a> Suporte</li>
-                
-            </ul>
-
+                    <!-- Botões de Login e Cadastro -->
+                    <div class="btn">
+                        <button class="login">Login</button>
+                        <button class="cadastro">Cadastro</button>
+                    </div>
+                </nav>
+            </div>
         </div>
+    </header>
 
-        <div class="btn"><!--criando botões-->
-            <button href="#" class="login">Login</button>
-            <button href="#" class="cadastro">Cadastro</button>
+    <!-- Seção principal da página -->
+    <main>
+        <!-- Seção com informações sobre o projeto "Sua Saúde" -->
+        <section>
+            <article>
+                <h2>Sobre nós</h2>
+                <!-- Lista de links sobre informações adicionais -->
+                <ul>
+                    <li><a href="#" target="_blank">Um sistema de agendamento de consultas online e muito mais</a></li>
+                    <li><a href="#" target="_blank">Nossos Parceiros</a></li>
+                </ul>
+                <!-- Informações adicionais ao lado (aside) -->
+                <aside>
+                    <br>
+                    <h4>Baixe o app</h4>
+                    <a href="#">Download</a>
+                </aside>
+            </article>
+        </section>
+
+        <!-- Título da seção de destaques do ano -->
+        <h1>Destaques do ano</h1><br>
+
+        <!-- Carrossel de Unidades Básicas de Saúde Familiar -->
+        <h2>Unidades Básicas de Saúde Familiar</h2>
+        <section class="ubsf-section carousel">
+            <!-- Botão para rolar à esquerda no carrossel -->
+            <button class="scroll-left-ubsf">&#10094;</button>
+            <!-- Contêiner de itens do carrossel -->
+            <div class="ubsf-container">
+                <!-- Itens individuais dentro do carrossel -->
+                <div class="ubsf-item">
+                    <h3>UBSF Centro Irecê</h3>
+                    <p>ver perfil...</p>
+                </div>
+                <div class="ubsf-item">
+                    <h3>UBSF Arnóbio Batista</h3>
+                    <p>ver perfil...</p>
+                </div>
+                <div class="ubsf-item">
+                    <h3>UBSF Paulo Freire</h3>
+                    <p>ver perfil...</p>
+                </div>
+            </div>
+            <!-- Botão para rolar à direita no carrossel -->
+            <button class="scroll-right-ubsf">&#10095;</button>
+        </section>
+
+        <!-- Carrossel de Clínicas -->
+        <h2>Clínicas</h2>
+        <section class="clinicas-section carousel">
+            <button class="scroll-left-clinicas">&#10094;</button>
+            <div class="clinicas-container">
+                <div class="clinica-item">
+                    <h3>Clínica Regional</h3>
+                    <p>ver perfil...</p>
+                </div>
+                <div class="clinica-item">
+                    <h3>Clínica CEON</h3>
+                    <p>ver perfil...</p>
+                </div>
+                <div class="clinica-item">
+                    <h3>Clínica AMI</h3>
+                    <p>ver perfil...</p>
+                </div>
+            </div>
+            <button class="scroll-right-clinicas">&#10095;</button>
+        </section>
+
+        <!-- Carrossel de Hospitais -->
+        <h2>Hospitais</h2>
+        <section class="hospitais-section carousel">
+            <button class="scroll-left-hospitais">&#10094;</button>
+            <div class="hospitais-container">
+                <div class="hospital-item">
+                    <h3>Albert Einstein</h3>
+                    <p>ver perfil...</p>
+                </div>
+                <div class="hospital-item">
+                    <h3>Sírio-Libanês</h3>
+                    <p>ver perfil...</p>
+                </div>
+                <div class="hospital-item">
+                    <h3>Oswaldo Cruz</h3>
+                    <p>ver perfil...</p>
+                </div>
+            </div>
+            <button class="scroll-right-hospitais">&#10095;</button>
+        </section>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Informações de direitos autorais -->
+            <div class="footer-info">
+                <p>&copy; 2024 Sua Saúde. Todos os direitos reservados.</p>
+            </div>
+
+            <!-- Links de política e suporte -->
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </div>
+
+            <!-- Links para redes sociais -->
+            <div class="footer-social">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
         </div>
-
-    </nav>
-
-    <br>
-    <h4>Bem-vindo à Página secundária das atividades:</h4>
-    <!-- Link para a página da atividade-3 -->
-    <a href="../projeto-individual/sandbox.html"> Ir para o SandBox</a>
+    </footer>
 </body>
-</html><!--encerrando documento-->
+</html>

@@ -1,0 +1,37 @@
+@charset "UTF8";
+/*JONATAS, MEU QUERIDO PROFESSOR, NÃO CONSIDERE O PADRÃO DE COR DESTA PÁGINA, AINDA IREI MODIFICAR..
+/*configuração geral para pagina sandbox*/
+*{
+    padding: 6px;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(229, 245, 212);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.sandbox{
+    background-color: #fffae2; /*Cor de fundo da pagina "sandbox"*/
+}
+h1{
+    color: blue;
+}
+h2{
+    color: blue;
+}
+h3{
+    color: blue;
+}
+h4{
+    color: blue;
+}
+h5{
+    color: blue;
+}
+h6{
+    color: blue;
+}
+p{
+    color: black;
+}

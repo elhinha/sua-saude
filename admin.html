@@ -1,0 +1,106 @@
+<!DOCTYPE html> <!-- Declara o tipo de documento como HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+  <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para garantir suporte a caracteres especiais -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define a escala e largura da viewport, importante para o design responsivo -->
+  <title>Administração - Sua Saúde</title> <!-- Define o título da página que aparece na aba do navegador -->
+  <link rel="stylesheet" href="../projeto-individual/sua-saude/assets/css/style.css"> <!-- Vincula o arquivo de estilo CSS externo para estilizar a página -->
+</head>
+
+<body>
+  <h2>Administração de Usuários</h2> <!-- Título da seção principal da página, indicando que a área é para administração de usuários -->
+
+  <!-- Barra de pesquisa para filtrar usuários na tabela -->
+  <input type="text" id="searchInput" placeholder="Pesquisar usuários..." onkeyup="searchTable()"> 
+  <!-- Atributos: id="searchInput" permite referenciar o campo, placeholder exibe uma dica, onkeyup chama a função searchTable quando uma tecla é pressionada -->
+
+  <!-- Botão para adicionar um novo usuário -->
+  <button id="addUserBtn">+</button> <!-- O botão de "+" para abrir o modal de cadastro de novos usuários -->
+
+  <!-- Modal para adicionar um novo usuário -->
+  <div id="addUserModal" class="modal"> <!-- A janela modal de cadastro de usuário, inicialmente escondida -->
+    <div class="modal-content"> <!-- Conteúdo da janela modal -->
+      <span class="close" id="closeAddModal">&times;</span> <!-- Botão para fechar o modal -->
+      <h2>Cadastrar Novo Usuário</h2> <!-- Título do modal -->
+      <form id="addUserForm"> <!-- Formulário para cadastro de usuário -->
+        <label for="newUsername">Nome de Usuário:</label> <!-- Rótulo para o campo do nome de usuário -->
+        <input type="text" id="newUsername" required> <!-- Campo para digitar o nome de usuário, com a propriedade "required" para garantir preenchimento -->
+        
+        <label for="newEmail">Email:</label> <!-- Rótulo para o campo de email -->
+        <input type="email" id="newEmail" required> <!-- Campo para o email, com validação de formato de email -->
+        
+        <label for="newPassword">Senha:</label> <!-- Rótulo para o campo de senha -->
+        <input type="password" id="newPassword" required> <!-- Campo para a senha, com tipo "password" para ocultar o texto digitado -->
+        
+        <button type="submit">Cadastrar</button> <!-- Botão de envio do formulário -->
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal para editar um usuário -->
+  <div id="editUserModal" class="modal"> <!-- Janela modal para editar um usuário -->
+    <div class="modal-content"> <!-- Conteúdo do modal -->
+      <span class="close" id="closeEditModal">&times;</span> <!-- Botão para fechar o modal de edição -->
+      <h2>Editar Usuário</h2> <!-- Título do modal de edição -->
+      <form id="editUserForm"> <!-- Formulário para editar o usuário -->
+        <label for="editUsername">Nome de Usuário:</label> <!-- Rótulo para o campo de nome de usuário -->
+        <input type="text" id="editUsername" required> <!-- Campo de texto para o nome de usuário do usuário que será editado -->
+        
+        <label for="editEmail">Email:</label> <!-- Rótulo para o campo de email -->
+        <input type="email" id="editEmail" required> <!-- Campo de email para edição -->
+        
+        <button type="submit">Salvar Alterações</button> <!-- Botão para salvar as alterações -->
+      </form>
+    </div>
+  </div>
+  
+  <!-- Janela de confirmação de exclusão de um usuário -->
+  <div id="deleteUserModal" class="modal"> <!-- Modal de confirmação para excluir um usuário -->
+    <div class="modal-content"> <!-- Conteúdo do modal -->
+      <span class="close" id="closeDeleteModal">&times;</span> <!-- Botão para fechar o modal de confirmação -->
+      <h2>Deseja excluir este usuário?</h2> <!-- Texto de confirmação -->
+      <p>Essa ação não poderá ser desfeita.</p> <!-- Aviso de que a exclusão é irreversível -->
+      <button id="confirmDeleteBtn">Sim, excluir</button> <!-- Botão para confirmar a exclusão -->
+      <button id="cancelDeleteBtn">Cancelar</button> <!-- Botão para cancelar a exclusão -->
+    </div>
+  </div>
+  
+  <!-- Tabela de usuários -->
+  <table> <!-- Tabela onde os usuários serão listados -->
+    <thead>
+      <tr> <!-- Cabeçalho da tabela -->
+        <th>ID</th> <!-- Cabeçalho da coluna ID -->
+        <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
+        <th>E-mail</th> <!-- Cabeçalho da coluna E-mail -->
+        <th>Ações</th> <!-- Cabeçalho da coluna Ações, onde botões de editar e excluir são colocados -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Exemplo de usuário na tabela -->
+      <tr>
+        <td>1</td> <!-- ID do usuário -->
+        <td>elia santana</td> <!-- Nome do usuário -->
+        <td>elia.santana@email.com</td> <!-- E-mail do usuário -->
+        <td> <!-- Ações -->
+          <button class="edit-btn">Editar</button> <!-- Botão de editar -->
+          <button class="delete-btn">Excluir</button> <!-- Botão de excluir -->
+        </td>
+      </tr>
+      <!-- Outro exemplo de usuário -->
+      <tr>
+        <td>2</td> <!-- ID do usuário -->
+        <td>Maria Oliveira</td> <!-- Nome do usuário -->
+        <td>maria.oliveira@email.com</td> <!-- E-mail do usuário -->
+        <td> <!-- Ações -->
+          <button class="edit-btn">Editar</button> <!-- Botão de editar -->
+          <button class="delete-btn">Excluir</button> <!-- Botão de excluir -->
+        </td>
+      </tr>
+      <!-- Outros usuários podem ser adicionados aqui -->
+    </tbody>
+  </table>
+
+  <!-- Inclusão do arquivo JavaScript que contém a lógica de funcionamento da página -->
+  <script src="../projeto-individual/sua-saude/assets/admin.js"></script>
+</body>
+</html>

@@ -6,32 +6,215 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* Estilo do corpo da página: define a fonte e a cor de fundo */
 body {
-    background-color: rgb(229, 245, 212);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: whitesmoke;
 }
-.sandbox{
-    background-color: #fffae2; /*Cor de fundo da pagina "sandbox"*/
+
+/* Paleta de cores acessíveis para pessoas com tipos de daltonismo */
+:root {
+    --azul-escuro: #1A2FEB;
+    --azul-medio: #5B82E0;
+    --azul-claro: #B5E3F5;
+    --amarelo-neon: #DAE605;
+    --laranja-claro: #F5C782;
+}
+/* Estilo do container principal do cabeçalho: alinhamento e cores */
+.container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: var(--azul-escuro); /* Fundo azul escuro */
+    color: white; /* Texto branco */
+}
+
+/* Estilo da logo na navbar: tamanho e peso da fonte */
+.navbar-logo .logo {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+/* Estilo da barra de navegação: alinha itens e espaça links */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo da lista de navegação: remove marcadores e da linha links */
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Espaçamento entre os itens do menu */
+.nav-menu li {
+    margin-right: 15px;
+}
+
+/* Estilo dos links no menu: cor e remoção de sublinhado */
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo dos links ao passar o mouse: cor */
+.nav-menu a:hover {
+    color: var(--laranja-claro);
+    text-decoration: dashed;
+}
+
+/* Estilo dos botões de login e cadastro: alinhamento e espaçamento */
+.btn {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo básico dos botões: cor, bordas e padding */
+.btn button {
+    background-color: var(--azul-medio);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Efeito ao passar o mouse sobre os botões */
+.btn button:hover {
+    background-color: var(--laranja-claro);
+}
+
+/* Estilo do corpo principal: padding nas laterais */
+main {
+    padding: 20px 30px;
+}
+
+/* Estilo das seções: espaçamento inferior */
+section {
+    margin-bottom: 30px;
 }
 h1{
-    color: blue;
+    color: var(--azul-escuro);
 }
 h2{
-    color: blue;
+    color: var(--azul-escuro);
 }
 h3{
-    color: blue;
+    color: var(--azul-escuro)e;
 }
 h4{
-    color: blue;
+    color: var(--azul-escuro);
 }
 h5{
-    color: blue;
+    color: var(--azul-escuro);
 }
 h6{
-    color: blue;
+    color: var(--azul-escuro);
 }
-p{
-    color: black;
+/* Estilo do rodapé: cores e padding */
+.footer {
+    background-color: var(--azul-escuro);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Container do rodapé: alinhamento dos elementos */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo do texto informativo no rodapé */
+.footer-info p {
+    font-size: 14px;
+}
+
+/* Estilo dos links de navegação no rodapé: lista em linha */
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* Espaçamento entre os links do rodapé */
+.footer-links li {
+    margin-right: 15px;
+}
+
+/* Estilo dos links do rodapé: remoção de sublinhado e cor */
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* Efeito ao passar o mouse nos links do rodapé */
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo das redes sociais no rodapé: espaçamento entre ícones */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo dos ícones de redes sociais no rodapé */
+.footer-social .social-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Efeito ao passar o mouse nos ícones de redes sociais */
+.footer-social .social-icon:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Ajustes no cabeçalho para telas pequenas */
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Menu de navegação em coluna para telas pequenas */
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    /* Margem superior nos botões para telas pequenas */
+    .btn {
+        margin-top: 10px;
+    }
+
+    /* Ajustes no layout do rodapé para telas pequenas */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Links do rodapé em coluna para telas pequenas */
+    .footer-links ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    /* Ícones de redes sociais no rodapé em coluna para telas pequenas */
+    .footer-social {
+        margin-top: 10px;
+    }
 }

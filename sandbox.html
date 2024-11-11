@@ -1,44 +1,135 @@
 <!DOCTYPE html>
+<!-- Define o tipo de documento como HTML5, informando ao navegador como interpretar o código. -->
 <html lang="pt-BR">
+<!-- Define o idioma da página como português do Brasil. -->
 <head>
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres da página como UTF-8, que é a mais comum e suporta caracteres especiais como acentos. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ajusta a visualização da página para dispositivos móveis, tornando-a responsiva. Define o tamanho da largura da tela como a largura do dispositivo. -->
     <link rel="shortcut icon" href="../projeto-individual/sua-saude/assets/icones/sb.ico" type="image/x-icon">
+    <!-- Define o ícone da aba do navegador (favicon). O caminho do arquivo está relativo à pasta do projeto. -->
     <title>SandBox</title>
+    <!-- Define o título da página, que aparece na aba do navegador. -->
     <link rel="stylesheet" href="../projeto-individual/sua-saude/assets/css/sandbox.css">
+    <!-- Link para o arquivo de estilos CSS que vai definir o layout visual da página. -->
 </head>
 
 <body>
-    <h1>sandbox</h1><!--título de nível 1-->
-    <p>Projeto individual da disciplina PRG-04 Web <br>Tema do site: página oficial de um sistema de agendamento de consultas online <br>Por: Elia Maria<br> 17/10/24</p><!--adcionando paragráfo -->
+    <!-- Corpo da página começa aqui -->
+
+    <!-- Cabeçalho contendo a logo e o menu de navegação -->
+    <header>
+        <div class="container">
+            <!-- Container para centralizar o conteúdo -->
+
+            <!-- Navbar que contém a logo -->
+            <nav class="navbar-logo">
+                <div class="logo">Sua Saúde</div>  
+                <!-- Exibe o nome da logo, "Sua Saúde" -->
+            </nav>
+
+            <!-- Menu principal de navegação -->
+            <div class="menu">
+                <nav class="nav-container">
+                    <!-- Lista de links do menu de navegação -->
+                    <ul class="nav-menu">
+                        <li><a href="../projeto-individual/index.html" target="_blank">Home</a></li>
+                        <!-- Link para a página inicial -->
+                        <li><a href="../projeto-individual/paleta-cor.html" target="_blank">Paleta</a></li>
+                        <!-- Link para a página de paleta de cores -->
+                    </ul>
+
+                    <!-- Botões de Login e Cadastro -->
+                    <div class="btn">
+                        <button class="login">Login</button>
+                        <!-- Botão de login -->
+                        <button class="cadastro">Cadastro</button>
+                        <!-- Botão de cadastro -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <h1>sandbox</h1>
+    <!-- Título de nível 1, geralmente usado para o título principal da página -->
+    <p>Projeto individual da disciplina PRG-04 Web <br>Tema do site: página oficial de um sistema de agendamento de consultas online <br>Por: Elia Maria<br> 17/10/24</p>
+    <!-- Parágrafo com informações do projeto e data -->
     <hr>
-    
+    <!-- Linha horizontal separando conteúdo -->
+
      <!-- Lista de itens -->
-     <h5>Lista:</h5>
+     <h4>Lista:</h4>
+     <!-- Título de nível 4 -->
      <ul>
          <li>página linkada</li>
+         <!-- Item de lista -->
          <li>lista criada</li>
-         <li>imagens dinamicas adcionadas</li>
+         <!-- Item de lista -->
+         <li>imagens dinâmicas adicionadas</li>
+         <!-- Item de lista -->
      </ul>
 
-     <h5>Imagem Dinâmica: </h5>
-     <!-- Imagem dinâmica -->
+     <h4>Imagem Dinâmica: </h4>
+     <!-- Título para a seção de imagem dinâmica -->
      <picture>
+        <!-- Elemento <picture> para fornecer imagens diferentes dependendo da largura da tela -->
         <source media="(max-width: 550px)" srcset="../projeto-individual/sua-saude/assets/imagens/foto-p.png" type="image/png"> 
+        <!-- Para telas com largura até 550px, exibe a imagem "foto-p.png" -->
         <source media="(max-width: 1000px)" srcset="../projeto-individual/sua-saude/assets/imagens/foto-m.png" type="image/png">
+        <!-- Para telas com largura até 1000px, exibe a imagem "foto-m.png" -->
         <img src="../projeto-individual/sua-saude/assets/imagens/foto-g.png" alt="imagem flexível">
+        <!-- Para telas maiores que 1000px, exibe a imagem "foto-g.png" -->
      </picture>
 
-     <h5>Reprodução de áudio:</h5>
+     <h4>Reprodução de áudio:</h4>
+     <!-- Título para a seção de áudio -->
      <audio src="../projeto-individual/sua-saude/assets/midia/guanacast-33.mp3" controls></audio>
+     <!-- Elemento <audio> para reproduzir áudio com controles (play, pause, volume) -->
 
-     <h5>Reprodução do vídeo hospedado no meu servidor:</h5>
+     <h4>Reprodução do vídeo hospedado no meu servidor:</h4>
+     <!-- Título para a seção de vídeo -->
      <video src="../projeto-individual/sua-saude/assets/midia/meu-video.mp4" width="500" poster="../projeto-individual/sua-saude/assets/imagens/limoes-capa.png" controls></video>
-     <br>
+     <!-- Elemento <video> para reproduzir vídeo com controles. O atributo 'poster' define uma imagem que será exibida antes do vídeo ser carregado. -->
 
-     <!-- Link de volta para o índex -->
      <br>
-     <h5>Página principal: </h5>
-     <a href="../projeto-individual/index.html">Sua Saúde</a>
+     <!-- Quebra de linha -->
+
+     <!-- Rodapé da página -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Container do rodapé -->
+            <div class="footer-info">
+                <!-- Informações de direitos autorais -->
+                <p>&copy; 2024 Sua Saúde. Todos os direitos reservados.</p>
+                <!-- Texto com os direitos autorais -->
+            </div>
+
+            <!-- Links de política e suporte -->
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <!-- Link para a Política de Privacidade -->
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <!-- Link para os Termos de Serviço -->
+                    <li><a href="#">Suporte</a></li>
+                    <!-- Link para a página de Suporte -->
+                </ul>
+            </div>
+
+            <!-- Links para redes sociais -->
+            <div class="footer-social">
+                <a href="#" class="social-icon">Facebook</a>
+                <!-- Link para o Facebook -->
+                <a href="#" class="social-icon">Twitter</a>
+                <!-- Link para o Twitter -->
+                <a href="#" class="social-icon">Instagram</a>
+                <!-- Link para o Instagram -->
+            </div>
+        </div>
+    </footer>
+    <!-- Fim do rodapé -->
+    
 </body>
 </html>

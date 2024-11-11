@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Define o tipo de documento como HTML5, indicando que o conteúdo da página será interpretado como HTML5. -->
+<html lang="pt-BR">
+<!-- Define o idioma da página como português do Brasil. -->
+<head>
+  <meta charset="UTF-8">
+  <!-- Define a codificação de caracteres da página como UTF-8, que é uma codificação amplamente utilizada e suporta caracteres especiais. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Faz com que a página seja responsiva, ajustando a largura da página conforme a largura do dispositivo e permitindo zoom. -->
+  <title>Login - Sua Saúde</title>
+  <!-- Define o título da página, que será exibido na aba do navegador. -->
+  <link rel="stylesheet" href="../projeto-individual/sua-saude/assets/css/style.css">
+  <!-- Link para o arquivo de estilos CSS que define a aparência visual da página. -->
+</head>
+<body>
+  <div class="login-container">
+    <!-- Contêiner para o formulário de login, usado para aplicar estilos e centralizar o conteúdo. -->
+    <h2>Login</h2>
+    <!-- Título de nível 2 para a seção de login. -->
+    <form id="loginForm" onsubmit="return validarLogin()">
+      <!-- Formulário de login. A função 'validarLogin()' será chamada ao tentar enviar o formulário. -->
+
+      <label for="email">E-mail ou Usuário:</label>
+      <!-- Label que descreve o campo de entrada para o e-mail ou nome de usuário. -->
+      <input type="text" id="email" name="email" placeholder="Digite seu e-mail ou usuário" required>
+      <!-- Campo de entrada para o e-mail ou nome de usuário. O atributo 'required' obriga o usuário a preencher o campo. -->
+
+      <label for="password">Senha:</label>
+      <!-- Label que descreve o campo de entrada para a senha. -->
+      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      <!-- Campo de entrada para a senha, com o tipo 'password' para ocultar os caracteres digitados. O atributo 'required' também obriga o preenchimento. -->
+
+      <button type="submit">Entrar</button>
+      <!-- Botão de envio do formulário. Quando clicado, chama a função 'validarLogin()' para validar o login. -->
+    </form>
+  </div>
+  
+  <script>
+    // Script JavaScript para validar os dados do login e redirecionar o usuário.
+    function validarLogin() {
+      var email = document.getElementById("email").value;
+      // Obtém o valor digitado no campo de e-mail ou nome de usuário.
+      var password = document.getElementById("password").value;
+      // Obtém o valor digitado no campo de senha.
+      
+      if (!email || !password) {
+        alert("Preencha todos os campos!");
+        return false;
+        // Se algum dos campos estiver vazio, exibe uma mensagem de alerta e impede o envio do formulário.
+      }
+      
+      // Se ambos os campos estiverem preenchidos, redireciona para a página de administração.
+      window.location.href = "admin.html";
+      return false; // Impede o envio real do formulário (evita recarregar a página).
+    }
+  </script>
+</body>
+</html>

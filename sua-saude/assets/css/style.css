@@ -1,292 +1,404 @@
-@charset "UTF8"; /* Define a codificação UTF-8 */
+@charset "UTF8"; /* Define a codificação UTF-8, garantindo que os caracteres especiais sejam interpretados corretamente */
 
 /* Estilo geral para caixas: remove margem, padding e define box-sizing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove qualquer margem aplicada por padrão aos elementos */
+    padding: 0; /* Remove qualquer padding aplicado por padrão aos elementos */
+    box-sizing: border-box; /* Ajusta o comportamento de box-sizing para que o padding e a borda sejam incluídos no cálculo do tamanho do elemento */
 }
 
 /* Estilo do corpo da página: define a fonte e a cor de fundo */
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: whitesmoke;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Define a fonte do corpo como uma lista de fontes, com uma fonte sans-serif como fallback */
+    background-color: whitesmoke; /* Define a cor de fundo do corpo da página como uma tonalidade clara de cinza */
 }
 
-/* Paleta de cores acessíveis para pessoas com tipos de daltonismo */
+/* Paleta de cores acessíveis para pessoas com tipos de daltonismo (Deuteranopia, Protanopia, e Tritanopia) */
 :root {
-    --azul-escuro: #1A2FEB;
-    --azul-medio: #5B82E0;
-    --azul-claro: #B5E3F5;
-    --amarelo-neon: #DAE605;
-    --laranja-claro: #F5C782;
+    --azul-escuro: #1A2FEB; /* Define uma variável de cor para azul escuro */
+    --azul-medio: #5B82E0; /* Define uma variável de cor para azul médio */
+    --azul-claro: #B5E3F5; /* Define uma variável de cor para azul claro */
+    --amarelo-neon: #DAE605; /* Define uma variável de cor para amarelo neon */
+    --laranja-claro: #F5C782; /* Define uma variável de cor para laranja claro */
 }
 
 /* Estilo do container principal do cabeçalho: alinhamento e cores */
 .container {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background-color: var(--azul-escuro); /* Fundo azul escuro */
-    color: white; /* Texto branco */
+    display: flex; /* Utiliza o layout flexbox para organizar os itens dentro do container */
+    align-items: baseline; /* Alinha os itens na linha base (a linha que contém o texto) */
+    justify-content: space-between; /* Distribui os itens de forma que fiquem espaçados igualmente entre eles */
+    padding: 15px 30px; /* Adiciona 15px de padding na parte superior e inferior e 30px nas laterais */
+    background-color: var(--azul-escuro); /* Define a cor de fundo como o valor da variável azul escuro */
+    color: white; /* Define a cor do texto como branca */
 }
 
 /* Estilo da logo na navbar: tamanho e peso da fonte */
 .navbar-logo .logo {
-    font-size: 30px;
-    font-weight: 900;
+    font-size: 30px; /* Define o tamanho da fonte como 30px */
+    font-weight: 900; /* Define o peso da fonte como 900 (negrito pesado) */
 }
 
 /* Estilo da barra de navegação: alinha itens e espaça links */
 .nav-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: flex; /* Utiliza o layout flexbox para organizar os itens dentro do container */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 20px; /* Define um espaçamento de 20px entre os itens dentro do container */
 }
 
-/* Estilo da lista de navegação: remove marcadores e alinha links */
+/* Estilo da lista de navegação: remove marcadores e da linha links */
 .nav-menu {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+    list-style-type: none; /* Remove os marcadores padrão da lista (como bolinhas ou números) */
+    display: flex; /* Utiliza o layout flexbox para os itens da lista */
+    margin: 0; /* Remove a margem padrão da lista */
+    padding: 0; /* Remove o padding padrão da lista */
 }
 
 /* Espaçamento entre os itens do menu */
 .nav-menu li {
-    margin-right: 15px;
+    margin-right: 15px; /* Adiciona uma margem à direita de 15px entre os itens da lista */
 }
 
 /* Estilo dos links no menu: cor e remoção de sublinhado */
 .nav-menu a {
-    color: white;
-    text-decoration: none;
+    color: white; /* Define a cor do texto do link como branca */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
 }
 
-/* Estilo dos links ao passar o mouse: cor e sublinhado */
+/* Estilo dos links ao passar o mouse: cor */
 .nav-menu a:hover {
-    color: var(--laranja-claro);
-    text-decoration: dashed;
+    color: var(--laranja-claro); /* Altera a cor do texto do link para laranja claro quando o mouse passa por cima */
+    text-decoration: dashed; /* Adiciona um sublinhado pontilhado aos links quando o mouse passa por cima */
 }
 
 /* Estilo dos botões de login e cadastro: alinhamento e espaçamento */
 .btn {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Utiliza o modelo de layout flexbox para alinhar os itens dentro do botão (geralmente para centralizar ou organizar o conteúdo) */
+    gap: 10px; /* Adiciona um espaçamento de 10px entre os itens dentro do container .btn */
 }
 
 /* Estilo básico dos botões: cor, bordas e padding */
 .btn button {
-    background-color: var(--azul-medio);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
+    background-color: var(--azul-medio); /* Define a cor de fundo do botão como o valor de azul médio, usando uma variável CSS */
+    color: white; /* Define a cor do texto dentro do botão como branco */
+    border: none; /* Remove qualquer borda padrão do botão */
+    padding: 10px 20px; /* Define o padding interno do botão: 10px na parte superior e inferior, e 20px nas laterais */
+    cursor: pointer; /* Altera o cursor para uma mãozinha, indicando que o botão é clicável */
+    border-radius: 10px; /* Arredonda as bordas do botão com um raio de 10px */
 }
 
 /* Efeito ao passar o mouse sobre os botões */
 .btn button:hover {
-    background-color: var(--laranja-claro);
+    background-color: var(--laranja-claro); /* Altera a cor de fundo para laranja claro quando o mouse passa sobre o botão */
 }
 
 /* Estilo do corpo principal: padding nas laterais */
 main {
-    padding: 20px 30px;
+    padding: 20px 30px; /* Define 20px de padding na parte superior e inferior, e 30px nas laterais esquerda e direita */
 }
 
 /* Estilo das seções: espaçamento inferior */
 section {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Adiciona uma margem inferior de 30px em cada seção */
 }
 
 /* Estilo dos títulos (h2): cor dos títulos */
 h2 {
-    color: #333;
+    color: #333; /* Define a cor do texto dos títulos h2 como um tom escuro de cinza (#333) */
+}
+
+/* Estilo da lista de links de navegação */
+.nav-links {
+    list-style-type: none; /* Remove os marcadores (bolinhas ou números) padrão dos itens da lista */
 }
 
 /* Estilo do título dentro do aside */
 aside h4 {
-    color: #333;
-    margin-bottom: 5px;
+    color: #333; /* Define a cor do texto do título como um tom de cinza escuro (#333) */
+    margin-bottom: 5px; /* Adiciona uma margem de 5px na parte inferior do título */
 }
 
 /* Estilo dos links no aside: cor e remoção de sublinhado */
 aside a {
-    color: var(--azul-medio);
-    text-decoration: none;
+    color: var(--azul-medio); /* Define a cor dos links no aside usando uma variável CSS para o tom de azul médio */
+    text-decoration: none; /* Remove o sublinhado dos links */
 }
 
 /* Estilo ao passar o mouse nos links do aside */
 aside a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Adiciona um sublinhado aos links quando o mouse passa sobre eles */
 }
 
 /* Estilo padrão para todas as seções: alinhamento e espaçamento */
 section {
-    text-align: center;
-    margin: 27px auto;
-    padding: 20px;
-    max-width: 98%;
-    border-radius: 8px;
-    box-sizing: border-box;
+    text-align: center; /* Centraliza o texto dentro de cada seção */
+    margin: 27px auto; /* Adiciona uma margem superior e inferior de 27px, centralizando as seções horizontalmente */
+    padding: 20px; /* Adiciona 20px de padding (espaçamento interno) em todas as direções */
+    max-width: 98%; /* Define a largura máxima da seção para 98% da largura disponível */
+    border-radius: 8px; /* Define bordas arredondadas com raio de 8px */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura e altura do elemento */
 }
 
 /* Estilo das seções UBSF, clínicas e hospitais: fundo gradiente e sombra */
 .ubsf-section, .clinicas-section, .hospitais-section {
-    background: linear-gradient(135deg, var(--azul-medio), var(--azul-claro));
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--azul-medio), var(--azul-claro)); /* Aplica um fundo gradiente diagonal de azul médio para azul claro */
+    padding: 15px; /* Adiciona 15px de padding em todas as direções */
+    border-radius: 10px; /* Define bordas arredondadas com raio de 10px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao redor da seção */
+    margin-bottom: 20px; /* Adiciona uma margem inferior de 20px */
 }
 
 /* Estilo dos itens dentro das seções UBSF, clínicas e hospitais */
 .ubsf-item, .clinica-item, .hospital-item { 
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Adiciona 10px de padding dentro de cada item */
+    margin: 10px; /* Adiciona 10px de margem ao redor de cada item */
+    border-radius: 8px; /* Arredonda as bordas dos itens com um raio de 8px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aplica uma sombra suave ao redor de cada item */
 }
 
 /* Botões de rolagem dos carrosséis: estilo básico e cor */
 .scroll-left-ubsf, .scroll-right-ubsf,
 .scroll-left-clinicas, .scroll-right-clinicas,
 .scroll-left-hospitais, .scroll-right-hospitais {
-    background-color: var(--azul-escuro);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 10px;
+    background-color: var(--azul-escuro); /* Define a cor de fundo dos botões como azul escuro */
+    color: white; /* Define a cor do texto dos botões como branco */
+    border: none; /* Remove qualquer borda do botão */
+    padding: 8px 12px; /* Define um padding de 8px na vertical e 12px na horizontal */
+    cursor: pointer; /* Define o cursor como uma mãozinha para indicar que é um botão clicável */
+    border-radius: 5px; /* Arredonda as bordas do botão com um raio de 5px */
+    margin: 10px; /* Adiciona uma margem de 10px ao redor de cada botão */
 }
 
 /* Efeito ao passar o mouse sobre os botões de rolagem */
 .scroll-left-ubsf:hover, .scroll-right-ubsf:hover,
 .scroll-left-clinicas:hover, .scroll-right-clinicas:hover,
 .scroll-left-hospitais:hover, .scroll-right-hospitais:hover {
-    background-color: var(--laranja-claro);
+    background-color: var(--laranja-claro); /* Altera a cor de fundo para laranja claro quando o mouse passa sobre o botão */
 }
 
 /* Estilo básico do carrossel: itens em linha */
 .carousel {
-    display: flex;
-    align-items: center;
+    display: flex; /* Define que os itens dentro do carrossel serão organizados em linha usando flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
 }
 
 /* Contêiner dos carrosséis: alinhamento e overflow oculto */
 .ubsf-container, .clinicas-container, .hospitais-container {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
+    display: flex; /* Organiza os itens dentro do contêiner em linha com flexbox */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    width: 100%; /* Define a largura do contêiner para 100% da largura disponível */
 }
 
 /* Estilo do rodapé: cores e padding */
 .footer {
-    background-color: var(--azul-escuro);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    background-color: var(--azul-escuro); /* Define a cor de fundo do rodapé usando uma variável CSS para o tom de azul escuro */
+    color: white; /* Define a cor do texto como branco */
+    padding: 20px 0; /* Adiciona 20px de padding no topo e na parte inferior do rodapé */
+    text-align: center; /* Alinha o texto do rodapé ao centro */
 }
 
 /* Container do rodapé: alinhamento dos elementos */
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    display: flex; /* Define o container como um flexbox para organizar os elementos dentro dele */
+    justify-content: space-between; /* Distribui os itens de forma que fiquem com o máximo de espaço entre eles */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    max-width: 1200px; /* Define uma largura máxima de 1200px para o container */
+    margin: 0 auto; /* Centraliza o container horizontalmente na página */
+    padding: 0 20px; /* Adiciona padding de 20px nas laterais para criar espaço ao redor dos elementos */
 }
 
 /* Estilo do texto informativo no rodapé */
 .footer-info p {
-    font-size: 14px;
+    font-size: 14px; /* Define o tamanho da fonte do texto informativo para 14px */
 }
 
 /* Estilo dos links de navegação no rodapé: lista em linha */
 .footer-links ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    padding: 0; /* Remove o padding da lista */
+    margin: 0; /* Remove a margem da lista */
+    display: flex; /* Organiza os itens da lista em linha, usando flexbox */
+    gap: 20px; /* Define um espaço de 20px entre os itens da lista */
 }
 
 /* Espaçamento entre os links do rodapé */
 .footer-links li {
-    margin-right: 15px;
+    margin-right: 15px; /* Adiciona uma margem à direita dos itens da lista, criando espaço entre os links */
 }
 
 /* Estilo dos links do rodapé: remoção de sublinhado e cor */
 .footer-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: white; /* Define a cor dos links como branco */
+    font-size: 14px; /* Define o tamanho da fonte dos links para 14px */
 }
 
 /* Efeito ao passar o mouse nos links do rodapé */
 .footer-links a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Adiciona sublinhado ao link quando o mouse passa sobre ele */
 }
 
 /* Estilo das redes sociais no rodapé: espaçamento entre ícones */
 .footer-social {
-    display: flex;
-    gap: 15px;
+    display: flex; /* Organiza os ícones das redes sociais em linha usando flexbox */
+    gap: 15px; /* Define um espaço de 15px entre os ícones das redes sociais */
 }
 
 /* Estilo dos ícones de redes sociais no rodapé */
 .footer-social .social-icon {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+    color: white; /* Define a cor dos ícones das redes sociais como branco */
+    text-decoration: none; /* Remove o sublinhado dos ícones */
+    font-size: 14px; /* Define o tamanho da fonte dos ícones para 14px */
 }
 
 /* Efeito ao passar o mouse nos ícones de redes sociais */
 .footer-social .social-icon:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Adiciona sublinhado ao ícone de rede social quando o mouse passa sobre ele */
 }
 
+ /* Estilos da página de login */
+
+/* Estilo do título (h2) dentro da área de login */
+.login-container h2 {
+    text-align: center; /* Centraliza o texto do título */
+    margin-bottom: 20px; /* Adiciona uma margem de 20px abaixo do título */
+}
+
+/* Estilo dos campos de entrada (input) dentro da área de login */
+.login-container input {
+    width: 100%; /* Faz com que o campo de entrada ocupe 100% da largura disponível */
+    padding: 10px; /* Adiciona 10px de preenchimento interno ao campo */
+    margin: 10px 0; /* Adiciona 10px de margem acima e abaixo do campo */
+    border: 1px solid #ddd; /* Define uma borda de 1px de cor cinza claro (#ddd) */
+    border-radius: 5px; /* Adiciona bordas arredondadas de 5px */
+}
+
+/* Estilo do botão dentro da área de login */
+.login-container button {
+    width: 100%; /* Faz com que o botão ocupe 100% da largura disponível */
+    padding: 10px; /* Adiciona 10px de preenchimento interno ao botão */
+    background-color: var(--azul-escuro); /* Define a cor de fundo do botão como a variável azul escuro */
+    color: white; /* Define a cor do texto do botão como branca */
+    border: none; /* Remove qualquer borda do botão */
+    border-radius: 5px; /* Adiciona bordas arredondadas de 5px ao botão */
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse sobre o botão */
+}
+
+/* Efeito ao passar o mouse sobre o botão de login */
+.login-container button:hover {
+    background-color: var(--laranja-claro); /* Muda a cor de fundo do botão para a variável laranja claro ao passar o mouse */
+}
+
+ /* Estilos da página de administração */
+
+/* Estilo da tabela */
+table {
+    width: 80%; /* Define que a tabela terá 80% da largura disponível */
+    margin-top: 50px; /* Adiciona uma margem de 50px no topo da tabela */
+    border-collapse: collapse; /* Faz com que as bordas das células da tabela se fundam, sem espaçamento entre elas */
+    background-color: white; /* Define o fundo da tabela como branco */
+}
+
+/* Estilos das bordas da tabela, cabeçalhos e células */
+table, th, td {
+    border: 1px solid #ddd; /* Adiciona uma borda de 1px de cor cinza claro (#ddd) para a tabela, cabeçalhos e células */
+}
+
+/* Estilos para as células de cabeçalho (th) e de dados (td) */
+th, td {
+    padding: 10px; /* Adiciona 10px de preenchimento interno nas células */
+    text-align: left; /* Alinha o texto à esquerda dentro das células */
+}
+
+/* Estilo específico para os cabeçalhos da tabela */
+th {
+    background-color: #f2f2f2; /* Define a cor de fundo dos cabeçalhos como um cinza claro (#f2f2f2) */
+}
+
+/* Estilos para os botões de edição e exclusão */
+.edit-btn, .delete-btn {
+    padding: 5px 10px; /* Adiciona 5px de preenchimento vertical e 10px horizontal aos botões */
+    margin-right: 5px; /* Adiciona uma margem de 5px à direita dos botões */
+    border: none; /* Remove as bordas padrão dos botões */
+    border-radius: 5px; /* Arredonda as bordas dos botões com raio de 5px */
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse sobre os botões */
+}
+
+/* Estilo para o botão de edição */
+.edit-btn {
+    background-color: var(--azul-medio); /* Define a cor de fundo do botão de edição com a variável azul médio */
+    color: white; /* Define a cor do texto do botão de edição como branca */
+}
+
+/* Estilo para o botão de exclusão */
+.delete-btn {
+    background-color: var(--azul-escuro); /* Define a cor de fundo do botão de exclusão com a variável azul escuro */
+    color: white; /* Define a cor do texto do botão de exclusão como branca */
+}
+
+/* Estilos básicos para o modal */
+.modal {
+    display: none; /* Inicialmente o modal está invisível */
+    position: fixed; /* A posição do modal é fixa, ou seja, ele fica preso à tela */
+    top: 0; /* Posiciona o modal no topo da tela */
+    left: 0; /* Posiciona o modal à esquerda da tela */
+    width: 100%; /* O modal ocupa toda a largura da tela */
+    height: 100%; /* O modal ocupa toda a altura da tela */
+    background-color: rgba(0, 0, 0, 0.5); /* Define o fundo do modal com uma cor preta semitransparente */
+    justify-content: center; /* Centraliza o conteúdo dentro do modal horizontalmente */
+    align-items: center; /* Centraliza o conteúdo dentro do modal verticalmente */
+}
+
+/* Estilo do conteúdo dentro do modal */
+.modal-content {
+    background-color: #fff; /* Define o fundo do conteúdo do modal como branco */
+    padding: 20px; /* Adiciona 20px de preenchimento interno ao conteúdo do modal */
+    border-radius: 5px; /* Adiciona bordas arredondadas de 5px ao conteúdo do modal */
+    width: 400px; /* Define a largura do conteúdo do modal como 400px */
+}
+
+/* Estilo para o botão de fechar dentro do modal */
+.close {
+    float: right; /* Posiciona o botão de fechar à direita do modal */
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse sobre o botão */
+    font-size: 20px; /* Define o tamanho da fonte do botão de fechar para 20px */
+}
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     /* Carrossel em coluna para telas pequenas */
     .carousel {
-        flex-direction: column;
+        flex-direction: column; /* Altera a direção do carrossel para coluna, ajustando a exibição dos itens em uma pilha vertical */
     }
     
     /* Ajustes no cabeçalho para telas pequenas */
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Altera a direção do container para coluna, empilhando os elementos verticalmente */
+        align-items: flex-start; /* Alinha os itens do container ao início (esquerda) da linha */
     }
 
     /* Menu de navegação em coluna para telas pequenas */
     .nav-menu {
-        flex-direction: column;
+        flex-direction: column; /* Altera a direção do menu de navegação para coluna, empilhando os itens verticalmente */
     }
 
     /* Margem superior nos botões para telas pequenas */
     .btn {
-        margin-top: 10px;
+        margin-top: 10px; /* Adiciona uma margem superior de 10px aos botões, criando mais espaço entre os botões e os elementos acima deles */
     }
 
     /* Ajustes no layout do rodapé para telas pequenas */
     .footer-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Altera a direção do rodapé para coluna, empilhando os elementos verticalmente */
+        align-items: center; /* Alinha os itens do rodapé ao centro da linha */
     }
 
     /* Links do rodapé em coluna para telas pequenas */
     .footer-links ul {
-        flex-direction: column;
-        margin-top: 10px;
+        flex-direction: column; /* Altera a direção dos links do rodapé para coluna, organizando-os em uma pilha vertical */
+        margin-top: 10px; /* Adiciona uma margem superior de 10px aos links, criando mais espaço entre os links e os elementos acima deles */
     }
 
     /* Ícones de redes sociais no rodapé em coluna para telas pequenas */
     .footer-social {
-        margin-top: 10px;
+        margin-top: 10px; /* Adiciona uma margem superior de 10px aos ícones de redes sociais, criando mais espaço entre os ícones e os elementos acima deles */
     }
 }

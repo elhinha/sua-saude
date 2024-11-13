@@ -1,5 +1,14 @@
 @charset "UTF8"; /* Define a codificação UTF-8, garantindo que os caracteres especiais sejam interpretados corretamente */
 
+/* Paleta de cores acessíveis para pessoas com tipos de daltonismo (Deuteranopia, Protanopia, e Tritanopia) */
+:root {
+    --azul-escuro: #1A2FEB; /* Define uma variável de cor para azul escuro */
+    --azul-medio: #5B82E0; /* Define uma variável de cor para azul médio */
+    --azul-claro: #B5E3F5; /* Define uma variável de cor para azul claro */
+    --amarelo-neon: #DAE605; /* Define uma variável de cor para amarelo neon */
+    --laranja-claro: #F5C782; /* Define uma variável de cor para laranja claro */
+}
+
 /* Estilo geral para caixas: remove margem, padding e define box-sizing */
 * {
     margin: 0; /* Remove qualquer margem aplicada por padrão aos elementos */
@@ -8,18 +17,12 @@
 }
 
 /* Estilo do corpo da página: define a fonte e a cor de fundo */
+/* Estilo padrão para dispositivos móveis (Mobile First) */
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Define a fonte do corpo como uma lista de fontes, com uma fonte sans-serif como fallback */
     background-color: whitesmoke; /* Define a cor de fundo do corpo da página como uma tonalidade clara de cinza */
-}
-
-/* Paleta de cores acessíveis para pessoas com tipos de daltonismo (Deuteranopia, Protanopia, e Tritanopia) */
-:root {
-    --azul-escuro: #1A2FEB; /* Define uma variável de cor para azul escuro */
-    --azul-medio: #5B82E0; /* Define uma variável de cor para azul médio */
-    --azul-claro: #B5E3F5; /* Define uma variável de cor para azul claro */
-    --amarelo-neon: #DAE605; /* Define uma variável de cor para amarelo neon */
-    --laranja-claro: #F5C782; /* Define uma variável de cor para laranja claro */
+    font-size: 14px;
+    padding: 10px;
 }
 
 /* Estilo do container principal do cabeçalho: alinhamento e cores */
@@ -297,6 +300,10 @@ table {
     border-collapse: collapse; /* Faz com que as bordas das células da tabela se fundam, sem espaçamento entre elas */
     background-color: white; /* Define o fundo da tabela como branco */
 }
+.table{
+    display: block; /* para telas pequenas, a tabela será mostrada em bloco */
+    overflow-x: auto; /* permite rolagem horizontal se necessário */
+}
 
 /* Estilos das bordas da tabela, cabeçalhos e células */
 table, th, td {
@@ -362,8 +369,111 @@ th {
     cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse sobre o botão */
     font-size: 20px; /* Define o tamanho da fonte do botão de fechar para 20px */
 }
-/* Responsividade para telas menores */
+
+/* TABLETS PARA MAIS */
+/* Responsividade para telas MAIORES com largura mínima de 768px */
+@media (min-width: 768px) {
+
+    body {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    /* usando FLEXBOX para telas maiores */
+    .container {
+        flex-direction: row; /* para telas maiores os elementos devem ficar lado a lado */
+        align-items: center; /* Centralizados verticalmente */
+        justify-content: space-between;
+    }
+
+    /* Carrossel em linha para telas de tablets */
+    .carousel {
+        flex-direction: row; /* Exibe itens em linha horizontal */
+    }
+
+    /* Menu de navegação em linha para tablets */
+    .nav-menu {
+        flex-direction: row; /* Menu em linha horizontal */
+    }
+
+    /* Remoção da margem superior nos botões */
+    .btn {
+        margin-top: 0;
+    }
+
+    /* Ajustes no layout do rodapé para tablets */
+    .footer-container {
+        flex-direction: row; /* Rodapé em linha horizontal */
+        align-items: center; /* Centralizados */
+    }
+
+    /* Links do rodapé em linha para tablets */
+    .footer-links ul {
+        flex-direction: row; /* Links em linha horizontal */
+        margin-top: 0;
+    }
+
+    /* Ícones de redes sociais no rodapé em linha */
+    .footer-social {
+        margin-top: 0;
+    }
+}
+
+/* DESKTOPS */
+/* Responsividade para telas MAIORES com largura mínima de 1024px */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+        padding: 30px;
+    }
+
+    /* Carrossel em linha para desktops */
+    .carousel {
+        flex-direction: row; /* Itens em linha horizontal */
+    }
+
+    /* Ajustes no cabeçalho para desktops */
+    .container {
+        flex-direction: row; /* Elementos em linha */
+        align-items: center; /* Centralizados verticalmente */
+    }
+
+    /* Menu de navegação em linha para desktops */
+    .nav-menu {
+        flex-direction: row; /* Menu em linha horizontal */
+    }
+
+    /* Sem margem superior nos botões */
+    .btn {
+        margin-top: 0;
+    }
+
+    /* Ajustes no layout do rodapé para desktops */
+    .footer-container {
+        flex-direction: row; /* Rodapé em linha horizontal */
+        align-items: center;
+    }
+
+    /* Links do rodapé em linha para desktops */
+    .footer-links ul {
+        flex-direction: row; /* Links em linha horizontal */
+        margin-top: 0;
+    }
+
+    /* Ícones de redes sociais no rodapé em linha */
+    .footer-social {
+        margin-top: 0;
+    }
+}
+
+/* SMARTPHONES (ainda estou analizando a necessidade dessa querie */
+/* Responsividade para telas MENORES ou com larguras iguais a 768px */
 @media (max-width: 768px) {
+
+    body{
+        font-size: 12px; /* tamanho de fonte ainda menor*/
+    }
+
     /* Carrossel em coluna para telas pequenas */
     .carousel {
         flex-direction: column; /* Altera a direção do carrossel para coluna, ajustando a exibição dos itens em uma pilha vertical */

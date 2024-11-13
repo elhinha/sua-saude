@@ -6,11 +6,14 @@
     margin: 0;
     box-sizing: border-box;
 }
-/* Estilo do corpo da página: define a fonte e a cor de fundo */
+/* Estilo do corpo da página: define a fonte e a cor de fundo e mobile first*/
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: whitesmoke;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Define a fonte do corpo como uma lista de fontes, com uma fonte sans-serif como fallback */
+    background-color: whitesmoke; /* Define a cor de fundo do corpo da página como uma tonalidade clara de cinza */
+    font-size: 14px;
+    padding: 10px;
 }
+
 
 /* Paleta de cores acessíveis para pessoas com tipos de daltonismo */
 :root {
@@ -183,38 +186,145 @@ h6{
     text-decoration: underline;
 }
 
-/* Responsividade para telas menores */
+/* TABLETS PARA MAIS */
+/* Responsividade para telas MAIORES com largura mínima de 768px */
+@media (min-width: 768px) {
+
+    body {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    /* usando FLEXBOX para telas maiores */
+    .container {
+        flex-direction: row; /* para telas maiores os elementos devem ficar lado a lado */
+        align-items: center; /* Centralizados verticalmente */
+        justify-content: space-between;
+    }
+
+    /* Carrossel em linha para telas de tablets */
+    .carousel {
+        flex-direction: row; /* Exibe itens em linha horizontal */
+    }
+
+    /* Menu de navegação em linha para tablets */
+    .nav-menu {
+        flex-direction: row; /* Menu em linha horizontal */
+    }
+
+    /* Remoção da margem superior nos botões */
+    .btn {
+        margin-top: 0;
+    }
+
+    /* Ajustes no layout do rodapé para tablets */
+    .footer-container {
+        flex-direction: row; /* Rodapé em linha horizontal */
+        align-items: center; /* Centralizados */
+    }
+
+    /* Links do rodapé em linha para tablets */
+    .footer-links ul {
+        flex-direction: row; /* Links em linha horizontal */
+        margin-top: 0;
+    }
+
+    /* Ícones de redes sociais no rodapé em linha */
+    .footer-social {
+        margin-top: 0;
+    }
+}
+
+/* DESKTOPS */
+/* Responsividade para telas MAIORES com largura mínima de 1024px */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+        padding: 30px;
+    }
+
+    /* Carrossel em linha para desktops */
+    .carousel {
+        flex-direction: row; /* Itens em linha horizontal */
+    }
+
+    /* Ajustes no cabeçalho para desktops */
+    .container {
+        flex-direction: row; /* Elementos em linha */
+        align-items: center; /* Centralizados verticalmente */
+    }
+
+    /* Menu de navegação em linha para desktops */
+    .nav-menu {
+        flex-direction: row; /* Menu em linha horizontal */
+    }
+
+    /* Sem margem superior nos botões */
+    .btn {
+        margin-top: 0;
+    }
+
+    /* Ajustes no layout do rodapé para desktops */
+    .footer-container {
+        flex-direction: row; /* Rodapé em linha horizontal */
+        align-items: center;
+    }
+
+    /* Links do rodapé em linha para desktops */
+    .footer-links ul {
+        flex-direction: row; /* Links em linha horizontal */
+        margin-top: 0;
+    }
+
+    /* Ícones de redes sociais no rodapé em linha */
+    .footer-social {
+        margin-top: 0;
+    }
+}
+
+/* SMARTPHONES (ainda estou analizando a necessidade dessa querie */
+/* Responsividade para telas MENORES ou com larguras iguais a 768px */
 @media (max-width: 768px) {
+
+    body{
+        font-size: 12px; /* tamanho de fonte ainda menor*/
+    }
+
+    /* Carrossel em coluna para telas pequenas */
+    .carousel {
+        flex-direction: column; /* Altera a direção do carrossel para coluna, ajustando a exibição dos itens em uma pilha vertical */
+    }
+    
     /* Ajustes no cabeçalho para telas pequenas */
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Altera a direção do container para coluna, empilhando os elementos verticalmente */
+        align-items: flex-start; /* Alinha os itens do container ao início (esquerda) da linha */
     }
 
     /* Menu de navegação em coluna para telas pequenas */
     .nav-menu {
-        flex-direction: column;
+        flex-direction: column; /* Altera a direção do menu de navegação para coluna, empilhando os itens verticalmente */
     }
 
     /* Margem superior nos botões para telas pequenas */
     .btn {
-        margin-top: 10px;
+        margin-top: 10px; /* Adiciona uma margem superior de 10px aos botões, criando mais espaço entre os botões e os elementos acima deles */
     }
 
     /* Ajustes no layout do rodapé para telas pequenas */
     .footer-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Altera a direção do rodapé para coluna, empilhando os elementos verticalmente */
+        align-items: center; /* Alinha os itens do rodapé ao centro da linha */
     }
 
     /* Links do rodapé em coluna para telas pequenas */
     .footer-links ul {
-        flex-direction: column;
-        margin-top: 10px;
+        flex-direction: column; /* Altera a direção dos links do rodapé para coluna, organizando-os em uma pilha vertical */
+        margin-top: 10px; /* Adiciona uma margem superior de 10px aos links, criando mais espaço entre os links e os elementos acima deles */
     }
 
     /* Ícones de redes sociais no rodapé em coluna para telas pequenas */
     .footer-social {
-        margin-top: 10px;
+        margin-top: 10px; /* Adiciona uma margem superior de 10px aos ícones de redes sociais, criando mais espaço entre os ícones e os elementos acima deles */
     }
 }
